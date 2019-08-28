@@ -26,6 +26,7 @@ jobs:
           git config --global user.email 'xiaopc@users.noreply.github.com'
           npm i -g hexo-cli
           npm i
+          apt-get install -y pandoc
 
       - name: Deploy
         run: |
