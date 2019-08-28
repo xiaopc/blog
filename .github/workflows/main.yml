@@ -26,7 +26,8 @@ jobs:
           git config --global user.email 'xiaopc@users.noreply.github.com'
           npm i -g hexo-cli
           npm i
-          apt-get install -y pandoc
+
+      - uses: docker://pandoc/latex:2.6
 
       - name: Deploy
         run: |
