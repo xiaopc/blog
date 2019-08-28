@@ -27,8 +27,9 @@ jobs:
           npm i -g hexo-cli
           npm i
 
-      - uses: docker://pandoc/latex:2.6
+
 
       - name: Deploy
         run: |
+          env
           hexo generate && hexo deploy
