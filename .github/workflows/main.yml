@@ -30,9 +30,8 @@ jobs:
           curl -s -L https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz | tar xvzf - -C $RUNNER_TOOL_CACHE/
 
       - name: Deploy
-        env:
-          PATH: $PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin
         run: |
+          export PATH="$PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin"
           env
           ls -l $RUNNER_TOOL_CACHE
           hexo generate && hexo deploy
