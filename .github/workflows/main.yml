@@ -18,20 +18,23 @@ jobs:
         env:
           ACTION_DEPLOY_KEY: ${{secrets.ACTION_DEPLOY_KEY}}
         run: |
+          # set up private key for deploy
           mkdir -p ~/.ssh/
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+          # set git infomation
           git config --global user.name 'xiaopc'
           git config --global user.email 'xiaopc@users.noreply.github.com'
+          # install dependencies
           npm i -g hexo-cli
           npm i
-          # install pandoc?
+          # install pandoc
           curl -s -L https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz | tar xvzf - -C $RUNNER_TOOL_CACHE/
 
       - name: Deploy
         run: |
+          # add pandoc to PATH
           export PATH="$PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin"
-          env
-          ls -l $RUNNER_TOOL_CACHE
+          # publish
           hexo generate && hexo deploy
