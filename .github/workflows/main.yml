@@ -23,7 +23,6 @@ jobs:
           echo $ACTION_DEPLOY_KEY > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ls -l ~/.ssh/
           # set git infomation
           git config --global user.name 'xiaopc'
           git config --global user.email 'xiaopc@users.noreply.github.com'
@@ -35,6 +34,7 @@ jobs:
 
       - name: Deploy
         run: |
+          ls -l ~/.ssh/
           # add pandoc to PATH
           export PATH="$PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin"
           # publish
