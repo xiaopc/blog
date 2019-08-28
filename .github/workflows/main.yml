@@ -26,8 +26,11 @@ jobs:
           git config --global user.email 'xiaopc@users.noreply.github.com'
           npm i -g hexo-cli
           npm i
-
-
+          # install pandoc?
+          wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz -o $HOME/pandoc
+          tar xvzf $HOME/pandoc -C $RUNNER_TOOL_CACHE
+          export PATH=$PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin
+          ls -l $RUNNER_TOOL_CACHE
 
       - name: Deploy
         run: |
