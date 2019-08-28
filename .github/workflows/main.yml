@@ -28,10 +28,11 @@ jobs:
           npm i
           # install pandoc?
           curl -s -L https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz | tar xvzf - -C $RUNNER_TOOL_CACHE/
-          export PATH=$PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin
-          ls -l $RUNNER_TOOL_CACHE
 
       - name: Deploy
+        env:
+          PATH: $PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin
         run: |
           env
+          ls -l $RUNNER_TOOL_CACHE
           hexo generate && hexo deploy
