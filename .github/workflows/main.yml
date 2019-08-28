@@ -19,6 +19,7 @@ jobs:
           ACTION_DEPLOY_KEY: ${{secrets.ACTION_DEPLOY_KEY}}
         run: |
           # set up private key for deploy
+          env
           mkdir -p ~/.ssh/
           echo $ACTION_DEPLOY_KEY > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
