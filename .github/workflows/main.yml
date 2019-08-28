@@ -1,9 +1,6 @@
 name: Build and Update Github Pages
 
-on:
-  push:
-    branches:
-      - source
+on: push
 
 jobs:
   build:
