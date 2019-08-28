@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+	<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@xiaopc</title>
+        <meta name="author" content="xiaopc">
+	</head>
+	<body>
+		<div class="container">
+				<div class="stage">
+			<ul>
+				<li class="card" data-outer="stage-blue">
+					<div class="card-top">
+						<h2>Profilo</h2>
+					</div>
+					<div class="card-content">
+						<h1>@xiaopc</h1>
+						<p class="swift-tip"></p>
+					</div>
+				</li>
+				<li class="card" data-outer="stage-green">
+					<div class="card-top">
+						<h2>Intro</h2>
+					</div>
+					<div class="card-content">
+						<ul>
+							<li>1997</li>
+							<li>netizen since 2003</li>
+							<li>junior in cs dept., sichuan univ.</li>
+							<li>silence preferred</li>
+							<li>coding naively</li>
+						</ul>
+					</div>
+				</li>
+				<li class="card" data-outer="stage-navy">
+					<div class="card-top">
+						<h2>Coding</h2>
+					</div>
+					<div class="card-content">
+						<ul>
+							<li>web frontend: 10y+ experience</li>
+							<li>web backend: php, python, node.js, go</li>
+							<li>native: c/c++, java</li>
+							<li>operations: linux, nginx, etc.</li>
+							<li>security: web, binary</li>
+						</ul>
+						<p>interested areas: machine learning and ui design</p>
+					</div>
+				</li>
+				<li class="card" data-outer="stage-orange">
+					<div class="card-top">
+						<h2>Prizes</h2>
+					</div>
+					<div class="card-content">
+						<ul>
+							<li>scu web dev contest - 3rd prize</li>
+							<li>lanqiao (regional) 2017 - 2nd prize</li>
+							<li>scuctf 2017 - 5#</li>
+							<li>scu programming contest 2017 - 3rd prize</li>
+							<li>and scholarships</li>
+						</ul>
+						<p>available for interns</p>
+						<p></p>
+					</div>
+				</li>
+				<li class="card" data-outer="stage-pink">
+					<div class="card-top">
+						<h2>Personal</h2>
+					</div>
+					<div class="card-content">
+						<ul>
+							<li>american &amp; nihon tv shows</li>
+							<li>no preference for music</li>
+							<li>a reader</li>
+							<li>a crossdresser</li>
+							<li>a sufferer</li>
+						</ul>
+					</div>
+				</li>
+				<li class="card" data-outer="stage-purple">
+					<div class="card-top">
+						<h2>Contact</h2>
+					</div>
+					<div class="card-content">
+							<a href="mailto:i@xpc.im">mail</a>
+							<a href="https://github.com/xiaopc">github</a>
+							<a href="https://twitter.com/xiaopc"><del>twitter</del></a>
+							<a href="https://v2ex.com/member/xiaopc"><del>v2ex</del></a>
+							<a href="http://music.163.com/user/home?id=7356946">cloudmusic</a>
+							<a href="http://www.xiami.com/u/2164468"><del>xiami</del></a>
+							<a href="https://www.douban.com/people/70247643/">douban</a>
+							<p>and some more...</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		</div>
+
+        <link rel="stylesheet" rev="stylesheet" href="style.css" type="text/css" media="all" />
+		<script type="text/javascript" src="https://cdnjs.loli.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.touchSwipe.min.js"></script>
+		<script type="text/javascript" src="xslider.js"></script>
+		<script>
+		jQuery(document).ready(function($) {
+			$('.stage').addClass('complete');
+			var xs = $('.stage').xslider({
+				swipe: {
+					prev: 'down',
+					next: 'up',
+				},
+				prefix: 'stage-',
+				contextClassData: 'outer',
+			});
+			//if ((document.body.clientWidth / document.body.clientHeight < 1) && document.documentElement.requestFullscreen)
+			//	document.documentElement.requestFullscreen()
+		});
+		</script>
+	</body>
+</html>

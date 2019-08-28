@@ -1,0 +1,35 @@
+name: Build and Update Github Pages
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+
+      - name: Setup Hexo env
+        env:
+          ACTION_DEPLOY_KEY: ${{secrets.ACTION_DEPLOY_KEY}}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name 'xiaopc'
+          git config --global user.email 'xiaopc@users.noreply.github.com'
+          npm i -g hexo-cli
+          npm i
+
+      - name: Deploy
+        run: |
+          hexo generate && hexo deploy
