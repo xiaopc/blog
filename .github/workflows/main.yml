@@ -20,9 +20,7 @@ jobs:
         run: |
           # set up private key for deploy
           mkdir -p ~/.ssh/
-          echo $ACTION_DEPLOY_KEY | base64
-          eval `ssh-agent -s`
-          ssh-add <(echo $ACTION_DEPLOY_KEY)
+          echo $ACTION_DEPLOY_KEY | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           # set git infomation
@@ -36,7 +34,6 @@ jobs:
 
       - name: Deploy
         run: |
-          ls -l ~/.ssh/
           # add pandoc to PATH
           export PATH="$PATH:$RUNNER_TOOL_CACHE/pandoc-2.7.3/bin"
           # publish
