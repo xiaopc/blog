@@ -7,9 +7,7 @@ categories:
 
 终于，Github 自己出 CI/CD 工具了，Whoa~
 
-> [GitHub Actions](https://github.com/features/actions) makes it easy to automate all your software workflows, now with world-class CI/CD. 
-  Build, test, and deploy your code right from GitHub. 
-  Make code reviews, branch management, and issue triaging work the way you want.
+![](/images/github-actions.png)
 
 鉴于 Gitlab 等早就有自动构建工具了，Github 已经晚了许多，那 Github Actions 能打得过吗？来上手试一下。
 
@@ -28,7 +26,6 @@ categories:
 咱等了不到一周的样子就收到了开通邮件。
 
 当然，如果是体验 CI 的话，也可以选择其他的工具，比如 Travis CI。
-
 这是之前写的介绍：[持续集成与 Travis CI 入门实践](https://xiaopc.org/2018/04/28/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E-travis-ci-%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5/)，这篇结尾有个链接介绍如何部署 Hexo 的，可以参考。
 
 ## 2. 配置 Hexo
@@ -65,7 +62,8 @@ ssh-keygen -t rsa -b 4096 -C "xiaopc@users.noreply.github.com" -f ~/.ssh/github-
 
 ![](/images/github-actions-template.png)
 
-对于*大部分*应用的自动测试构建发布是足够的了，这个相比 Travis CI 降低了一点点门槛。
+对于大部分应用的自动测试构建发布是足够的了，这个相比 Travis CI 降低了一点点门槛。
+
 此外，Actions 还可以将动作打包发布到 [Marketplace](https://github.com/marketplace?type=actions)，这是 Actions 的一个亮点，大大增加了复用能力。
 
 不过要部署 Hexo，这些是不够的。如果在网页编辑配置文件的话，选择 `Blank workflow`。
@@ -121,7 +119,7 @@ jobs:
 1. `on` 标注什么事件会触发这个 workflow，可以指定 branches，详情参考[文档](https://help.github.com/en/articles/events-that-trigger-workflows)。
 
 2. `runs-on` 设置运行平台，目前有 Windows、Ubuntu、macOS，见[文档](https://help.github.com/en/articles/virtual-environments-for-github-actions)。
-
+https://gythialy.github.io/deploy-hexo-to-github-pages-via-github-actions/
 3. `uses` 是使用打包好的 action，可以通过 `with` 传参数。官方提供了一些 Git 基本操作和环境安装的包，也可以使用 Docker。
 
 4. `env` 可以设置这一步的环境变量，这一步设置的变量不会继承到下一步。刚才设置的私钥可以通过 `${{ secrets.key名 }}` 获取到，具体见[文档](https://help.github.com/en/articles/virtual-environments-for-github-actions)。另外直接将密钥 echo 出来会被打码 :)
@@ -131,9 +129,10 @@ jobs:
 6. Git 配置请更改为自己的。
 
 7. 由于咱用了 hexo-renderer-pandoc 引擎渲染 Markdown（LaTeX 公式支持更好），要装 pandoc。
-但是 runner 环境是没有 root 权限的，所以只能在放在其他目录。
-官方的 toolkit 提供了一个缓存下载内容的工具 [@actions/tool-cache](https://github.com/actions/toolkit/tree/master/packages/tool-cache)，但是它仅在一个 workflow 里作用，so... 
-工具的下载保存目录是 `$RUNNER_TOOL_CACHE`，这个环境变量没有在文档里，目前值为 `/opt/hostedtoolcache`。
+但是没有 root 权限，只能手动装在其他目录。
+官方的 toolkit 提供了一个缓存下载内容的工具 [actions/tool-cache](https://github.com/actions/toolkit/tree/master/packages/tool-cache)，但是它仅在一个 workflow 里作用，so... 
+
+8. 上面说的那个工具下载保存目录是 `$RUNNER_TOOL_CACHE`，这个环境变量没有在文档里，目前值为 `/opt/hostedtoolcache`。
 
 ## 5. 开始构建
 
@@ -145,7 +144,7 @@ jobs:
 
 和 Travis CI 相比，Actions 提供的平台更多，扩展性更强，但是缺少像 build cache 这些功能（build 的时候每次都要重新装依赖）。
 
-虽然和它声称的 `word-class CI/CD` 还有一些距离，但是 Actions 已经比目前免费的工具高到不知道哪里了。
+虽然和它声称的 **word-class CI/CD** 还有一些距离，但是 Actions 已经比目前免费的工具高到不知道哪里了。
 
 再加上它与 Github 的深度集成，以及 marketplace 仓库，可以发挥 CI/CD 的更多潜能。
 
@@ -155,8 +154,8 @@ jobs:
 
 本文参考了：
 
-[1] 通过 GitHub Actions 自动部署 Hexo https://gythialy.github.io/deploy-hexo-to-github-pages-via-github-actions/
+[1] 通过 GitHub Actions 自动部署 Hexo [https://gythialy.github.io/deploy-hexo-to-github-pages-via-github-actions/](https://gythialy.github.io/deploy-hexo-to-github-pages-via-github-actions/)
 
-[2] Deploying Hugo With Github Actions https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/
+[2] Deploying Hugo With Github Actions [https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/](https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/)
 
-[3] .gitlab.ci.yml for SSH with private key. https://gist.github.com/yannhowe/5ab1501156bd84c8ac261e2c17b8e3e0
+[3] .gitlab.ci.yml for SSH with private key [https://gist.github.com/yannhowe/5ab1501156bd84c8ac261e2c17b8e3e0](https://gist.github.com/yannhowe/5ab1501156bd84c8ac261e2c17b8e3e0)
