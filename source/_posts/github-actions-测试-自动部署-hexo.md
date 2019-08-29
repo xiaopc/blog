@@ -30,16 +30,15 @@ categories:
 
 ## 2. 配置 Hexo
 
-如何安装及配置不是本文重点，请自行查询[官方文档](https://hexo.io/zh-cn/docs/)。
+如何安装及配置 Hexo 不是本文重点，请自行查询[官方文档](https://hexo.io/zh-cn/docs/)。
 
 建议先在本地跑通部署到 Github Pages 以后再继续。
 
-配置完成后，把 `_config.yml` 里 `deploy` 的 repo 地址换成 SSH 地址（仓库页面 Clone and Download - Use SSH 里的地址），以便后面用密钥 push 到仓库。
+配置完成后，把 `_config.yml` 里 `deploy` 的 repo 地址换成 SSH 地址（仓库页面 **Clone and Download - Use SSH** 里的地址），以便后面用密钥 push 到仓库。
 
 ## 3. 配置仓库及 key
 
 因为用户名 `username.github.io` 的 Github Pages 仓库只能部署 master 分支，而 Actions 的配置文件需要放在 master 分支（仅为个人猜测，因为放在其他分支出现了问题）。
-
 所以需要再开一个仓库，放本地的源代码以及配置 Actions。
 
 新建一个仓库，先不需要初始化。在本地生成一个 key：
@@ -66,7 +65,9 @@ ssh-keygen -t rsa -b 4096 -C "xiaopc@users.noreply.github.com" -f ~/.ssh/github-
 
 此外，Actions 还可以将动作打包发布到 [Marketplace](https://github.com/marketplace?type=actions)，这是 Actions 的一个亮点，大大增加了复用能力。
 
-不过要部署 Hexo，这些是不够的。如果在网页编辑配置文件的话，选择 `Blank workflow`。
+不过要部署 Hexo，现在还没有打包的动作，需要自己写。
+
+如果在网页编辑配置文件的话，选择 `Blank workflow`。
 如果是在本地目录提交配置文件的话，将配置文件存至 `.github/workflows/*随便起名*.yml`。
 
 ```yaml
@@ -119,7 +120,7 @@ jobs:
 1. `on` 标注什么事件会触发这个 workflow，可以指定 branches，详情参考[文档](https://help.github.com/en/articles/events-that-trigger-workflows)。
 
 2. `runs-on` 设置运行平台，目前有 Windows、Ubuntu、macOS，见[文档](https://help.github.com/en/articles/virtual-environments-for-github-actions)。
-https://gythialy.github.io/deploy-hexo-to-github-pages-via-github-actions/
+
 3. `uses` 是使用打包好的 action，可以通过 `with` 传参数。官方提供了一些 Git 基本操作和环境安装的包，也可以使用 Docker。
 
 4. `env` 可以设置这一步的环境变量，这一步设置的变量不会继承到下一步。刚才设置的私钥可以通过 `${{ secrets.key名 }}` 获取到，具体见[文档](https://help.github.com/en/articles/virtual-environments-for-github-actions)。另外直接将密钥 echo 出来会被打码 :)
