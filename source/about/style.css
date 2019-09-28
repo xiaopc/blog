@@ -51,6 +51,7 @@ h2 {
     position: fixed;
     display: block;
     background: var(--radius-img);
+    background-size: contain;
     transform: rotate(90deg);
     content: " ";
     width: var(--border-radius);
@@ -62,6 +63,7 @@ h2 {
     position: fixed;
     display: block;
     background: var(--radius-img);
+    background-size: contain;
     content: " ";
     width: var(--border-radius);
     height: var(--border-radius);
@@ -81,6 +83,7 @@ h2 {
     position: fixed;
     display: block;
     background: var(--radius-img);
+    background-size: contain;
     transform: rotate(180deg) translateX(22px);
     content: " ";
     width: var(--border-radius);
@@ -91,6 +94,7 @@ h2 {
     position: fixed;
     display: block;
     background: var(--radius-img);
+    background-size: contain;
     transform: rotate(-90deg) translateY(-22px);
     content: " ";
     width: 22px;
