@@ -178,7 +178,7 @@ pre {
     }
 }
 
-$signs: ("html", "js", "bash", "css", "scss","diff", "java", "xml", "python", "json", "swift", "ruby", "perl", "php", "c", "java", "cpp", "ts");
+$signs: ("apache", "bash", "c", "cpp", "csharp", "css", "diff", "go", "http", "toml", "java", "js", "json", "kotlin", "less", "makefile", "markdown", "nginx", "perl", "php", "python", "ruby", "rust", "scss", "sql", "swift", "ts", "html", "xml", "yaml");
 @include code-signs($signs);
 
 .highlight.cpp .code:after {

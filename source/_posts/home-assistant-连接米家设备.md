@@ -60,38 +60,38 @@ hass --open-ui
 
 ## 4. 米家相关
 
-ZigBee 设备是比较简单的（[见这](https://home-assistant.cc/component/xiaomi/zigbee/)），而直接连接云服务的 WiFi 设备就比较头疼了。
+连接 ZigBee 设备是比较简单的（[见这](https://home-assistant.cc/component/xiaomi/zigbee/)），而直接连接云服务的 WiFi 设备就比较头疼了。
 
 这类设备的接口被叫做 `miIO`，走这个接口的设备[见此](https://github.com/rytilahti/python-miio)。（想研究协议本身可以看[这个](https://github.com/OpenMiHome/mihome-binary-protocol/blob/master/doc/PROTOCOL.md)）
 
 与每个使用 `miIO` 的设备通信都需要一个 token，目前只能通过提取 Android 米家 5.0 至 [5.0.19](https://mi-home.en.uptodown.com/android/download/1690042) 版本的数据库文件 `miio2.db` 才能获取到。（4.x 实测已经不能显示此类设备）
 
-（注意，这个 token 在重置网络会失效）
+（注意，这个 token 在重置网络后会失效）
 
-有 root 就很简单，直接打开 `/data/data/com.xiaomi.smarthome/databases/miio2.db` 里的 `devicereord` 表就有设备对应的 token。
+有 root 就很简单，直接打开 `/data/data/com.xiaomi.smarthome/databases/miio2.db`，里面 `devicereord` 表就有设备对应的 token。
 
 没有 root 的话就只能用应用备份把数据库备份出来，再解包备份文件。
 
 通过 adb 备份（不是所有的 ROM 都可以，窝用 Smartisan M1 就没法备份，当然用模拟器可能更简单）：
 
-```
+```bash
 adb backup -noapk com.xiaomi.smarthome -f backup.ab
 ```
 
 然后用 `adbextractor`（[sourceforge](https://sourceforge.net/projects/adbextractor/)） 提取：
-```
+```bash
 java -jar ../android-backup-extractor/abe.jar unpack backup.ab backup.tar ""
 ```
 
 SQLite 数据库有很多在线查看的工具，比如 [https://inloop.github.io/sqlite-viewer/](https://inloop.github.io/sqlite-viewer/)。
 
-此外，配置还需要设备的 IP，看下路由表就有，刚才那张表的 `localIP` 也有。要确认 hass 运行的设备能连接上这个 IP。
+此外，配置还需要设备的 IP，看下路由表就有，刚才那张表的 `localIP` 列也有。要确认 hass 运行的设备能连接上这个 IP。
 
 ## 5. 配置
 
-hass 所有的配置都在配置目录的 `configuration.yaml` 里，在支持的设备列表里有配置说明，在参考链接 [2] 也有（这个翻译版有的地方有点旧了，有官方适配的还是以那个列表为准）。
+hass 所有的配置都在配置目录的 `configuration.yaml` 里，在支持的设备列表里有配置说明，在参考链接 [2] 也有（这个翻译版有的地方有点旧了，有官方适配的还是以官方文档为准）。
 
-这里用米家空气检测仪为例，文档的页面[在此](https://www.home-assistant.io/integrations/air_quality.xiaomi_miio/)。
+这里以米家空气检测仪为例，文档页面[在此](https://www.home-assistant.io/integrations/air_quality.xiaomi_miio/)。
 
 直接在 `configuration.yaml` 里添加：
 
