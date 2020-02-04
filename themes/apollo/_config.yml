@@ -1,6 +1,6 @@
 menu:
-    Home: /
-    Archive: /archives/
+#    Home: /
+    Archives: /archives/
     Links: /links.html
     Reviews: https://www.notion.so/08bd1851f8ed43339d87e7f764d437aa?v=8b7f92c3ace6450a95bf086fa81459f6
     About: /about
