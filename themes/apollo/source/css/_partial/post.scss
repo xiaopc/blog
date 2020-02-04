@@ -3,10 +3,12 @@
 }
 
 .post-block {
-    .post-title {
+    .post-title{
         margin: 0.65em 0;
-        color: #2c3e50;
         font-size: 1.5em;
+        a {
+            color: #2c3e50;
+        }
     }
 
     .post-info {
@@ -58,7 +60,7 @@
         border: 0;
         border-top: 5pt dotted #42b983;
         margin: 20pt auto;
-        max-width: 67pt;
+        max-width: 60pt;
     }
     
     a {

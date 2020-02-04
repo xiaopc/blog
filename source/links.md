@@ -46,37 +46,45 @@ permalink: links/
 {% raw %}
 <style>
 .link-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
 }
 .link-list a {
     display: inline-block;
-    width: 160px;
+    min-width: 160px;
     height: 50px;
-    margin: 10px 10px 15px;
     padding: 10px 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0625);
     transition: 0.1s all;
 }
 .link-list a:hover {
-    border-color: #7ad0a9;
+    border-color: #4FC08D;
+    box-shadow: 0 1px 2px rgba(79, 192, 141, 0.0625);
+}
+.link-list a:active {
+    transform: translateY(1px);
+    border-color: #3AA373;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0625) inset;
 }
 .link-list a span {
-    color: #7ad0a9;
+    color: #4FC08D;
 }
 .link-list a.missing::before {
     content: '失效链接';
     color: #fff;
     background: #ddd;
     float: right;
-    padding: 0 5px;
+    padding: 0 8px;
     transform: translate(21px, -11px);
     transition: 0.1s all;
     border-radius: 0 5px 0 5px;
 }
 .link-list a.missing:hover::before {
-    background: #7ad0a9;
+    background: #4FC08D;
 }
 
 </style>

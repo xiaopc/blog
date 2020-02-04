@@ -1,8 +1,14 @@
 mixin postInfo(item)
     .post-info
         != full_date(item.date, 'll')
-        if item.from && (is_home() || is_post())
-            a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
+        if is_home() || is_post()
+            if item.categories.length > 0
+                !=' · '
+            - item.categories.each(function (cat){
+                a(href=url_for(cat.path))!= cat.name
+            - })
+            if item.from
+                a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
 
 
 //- Index Page
