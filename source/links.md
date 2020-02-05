@@ -9,6 +9,9 @@ permalink: links/
     <a href="https://www.notion.so/08bd1851f8ed43339d87e7f764d437aa?v=8b7f92c3ace6450a95bf086fa81459f6" target="_blank" rel="noopener">
         书 影 评<br><span>notion.so</span>
     </a>
+    <a href="https://t.me/s/imxpc" target="_blank" rel="noopener">
+        passageway<br><span>t.me/imxpc</span>
+    </a>
 </div>
 {% endraw %}
 
