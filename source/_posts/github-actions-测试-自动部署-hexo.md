@@ -53,6 +53,10 @@ ssh-keygen -t rsa -b 4096 -C "xiaopc@users.noreply.github.com" -f ~/.ssh/github-
 
 然后在 Github Pages 的仓库，**Settings -> Deploy keys** 添加刚刚生成的公钥，名称随意，但要勾选 **Allow write access**。
 
+> 2020-02-19 update:
+如果 Github 账号有添加过 SSH key 是可以直接用的（那个 key 有所有仓库的权限），只需要添加 `ACTION_DEPLOY_KEY` 即可，不需要添加公钥。
+但是为了安全起见呢，最好还是新建一个吧 (o=^•ェ•)o
+
 ## 4. 给源码仓库添加 Actions 配置
 
 可以在网页上 **Actions** 里编辑配置文件，也可以直接在本地目录添加直接 commit。
