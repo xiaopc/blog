@@ -124,11 +124,11 @@ Git 的设置是有层级的。
 
 系统级设置在 `C:\Program Files\Git\mingw64\etc\gitconfig`.（GNU/Linux `/etc/gitconfig`）
 
-本地用户全局设置在 `C:\Users\xiaopc\.gitconfig`.（GNU/Linux `~/.gitconfig`）
+本地用户全局设置在 `C:\Users\<用户名>\.gitconfig`.（GNU/Linux `~/.gitconfig`）
 
-一个仓库的设置在仓库目录的 `.git\config`.
+单个仓库的设置在仓库目录的 `.git\config`.
 
-看你要在哪级设置了，设置方法都是一样的。
+在哪级设置都可以，方法是一样的。
 
 ```ini
 [user]
