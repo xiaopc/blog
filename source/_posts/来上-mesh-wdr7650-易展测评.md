@@ -85,7 +85,7 @@ Mesh 是一个组网方案，并没有一套标准。比如华硕叫 AiMesh，TP
 
 测试了笔记本，iPad 和手机，下文中的测试设备均为某厂 Mate 20 Pro with Android 10，2*2 MIMO。
 
-总体上体验还好，各屋都能收到 5GHz 信号，协商速度都在 100Mbps 以上，大部分能达到 200Mbps，一半能达到 400Mbps。
+总体上体验还好，各屋都能收到 5GHz 信号，协商速度都在 100Mbps 以上，大部分能达到 400Mbps，一半能达到 600Mbps 以上。
 
 还是有两个小问题：
 
@@ -93,11 +93,13 @@ Mesh 是一个组网方案，并没有一套标准。比如华硕叫 AiMesh，TP
 
 ![](/images/mesh-4.jpg)
 
-.
+（App：Cellurar-Z）
 
 二是漫游的过程中速度不是太稳定，信号好的时候也不一定协商到高的速度。
 
 ![](/images/mesh-5.jpg)
+
+（App：WiFi 魔盒）
 
 ## 4. 关于无线回程和 MU-MIMO
 
