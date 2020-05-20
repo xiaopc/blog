@@ -58,5 +58,6 @@ mixin post(item)
             +postInfo(item)
             .post-content
                 != item.content
-            +postFooter()
+            if is_post()
+                +postFooter()
 
