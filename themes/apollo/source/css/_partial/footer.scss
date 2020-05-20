@@ -1,3 +1,42 @@
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #3aa373;
+    border-left: 4px solid #3aa373;
+    border-radius: 4px;
+    margin: 16pt 12%;
+    padding: 0 16pt;
+    .license {
+        margin-block-start: 20pt;
+        margin-block-end: 20pt;
+    }
+    .like {
+        position: relative;
+        .like-qrcode {
+            margin: 16pt 0 16pt 16pt;
+            max-height: 160px;
+            filter: invert(56%) sepia(43%) saturate(539%) hue-rotate(100deg) brightness(89%) contrast(91%);
+            transition: all .3s;
+        }
+        .avatar {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            left: 64px;
+            top: 64px;
+            padding: 5px;
+            transition: all .3s;
+        }
+    }
+    .like:hover {
+        cursor: none;
+        .like-qrcode, .avatar {
+            transform: scale(1.1);
+        }
+    }
+
+}
+
 .paginator {
     margin: 4em 0;
     text-align: center;

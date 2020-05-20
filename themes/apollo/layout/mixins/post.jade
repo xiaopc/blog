@@ -10,6 +10,12 @@ mixin postInfo(item)
             if item.from
                 a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
 
+mixin postFooter()
+    .post-footer
+        p.license!= __('license')
+        .like
+            img.like-qrcode(src=url_for(theme.likeqr) alt="like qrcode")
+            img.avatar(src=url_for(theme.avatar))
 
 //- Index Page
 mixin posts()
@@ -52,3 +58,5 @@ mixin post(item)
             +postInfo(item)
             .post-content
                 != item.content
+            +postFooter()
+

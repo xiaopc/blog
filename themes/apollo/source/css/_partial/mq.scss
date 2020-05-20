@@ -42,6 +42,18 @@ main.container {
             left: 15px;
         }
     }
+    .post-footer {
+        flex-direction: column;
+        margin: 16pt 0;
+        align-items: center;
+        .license {
+            margin-block-start: inherit;
+            margin-block-end: 0;
+        }
+        .like-qrcode {
+            margin: 0 0 16pt;
+        }
+    }
     .ds-thread,
     #disqus_thread {
         margin: 2em 10px;
