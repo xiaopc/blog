@@ -12,6 +12,7 @@
     }
     .like {
         position: relative;
+        user-select: none;
         .like-qrcode {
             margin: 16pt 0 16pt 16pt;
             max-height: 160px;
