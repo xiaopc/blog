@@ -4,6 +4,21 @@ date: 2017-12-26 20:52:56
 permalink: links/
 ---
 
+## 推广
+
+{% raw %}
+<div class="link-list">
+    <a href="http://www.dynadot.com/?s9T6ugy6e6C647c" target="_blank" rel="noopener">
+        DynaDot<br><span>域名注册首单 $9.99 送 $5</span>
+    </a>
+    <a href="https://www.aliyun.com/minisite/goods?userCode=hl1uilbl" target="_blank" rel="noopener">
+        阿里云优惠券
+    </a>
+</div>
+{% endraw %}
+
+## 其他写字的地方
+
 {% raw %}
 <div class="link-list">
     <a href="https://www.notion.so/08bd1851f8ed43339d87e7f764d437aa?v=8b7f92c3ace6450a95bf086fa81459f6" target="_blank" rel="noopener">
