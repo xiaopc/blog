@@ -31,8 +31,8 @@ if theme.valineId
     script.
         new Valine({
             el: '#vcomments',
-            appId: '#(theme.valineId)',
-            appKey: '#(theme.valineKey)',
+            appId: '#{theme.valineId}',
+            appKey: '#{theme.valineKey}',
             avatar: 'robohash',
             recordIP: true,
             requiredFields: ['nick','mail']
