@@ -12,8 +12,11 @@ likeqr: /wechat_like.png
 
 # Comment
 # e.g disqus: seansun
-disqus: xiaopc-1
+disqus:
 duoshuo:
+valineId: QWPJDsaiA2w1pYVMtdUaupan-MdYXbMMI
+valineKey: bD3bvilfMLj1PdQxeG1klTm0
+
 
 # Analytics
 # google-analytics:

@@ -11,7 +11,6 @@ if theme.duoshuo
              || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
 
-
 if theme.disqus
     #disqus_thread
     script.
@@ -25,3 +24,16 @@ if theme.disqus
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     script(id='dsq-count-scr' src='//#{theme.disqus}.disqus.com/count.js' async)
+
+if theme.valineId
+    #vcomments
+    script(src='//unpkg.com/valine/dist/Valine.min.js')
+    script.
+        new Valine({
+            el: '#vcomments',
+            appId: '#(theme.valineId)',
+            appKey: '#(theme.valineKey)',
+            avatar: 'robohash',
+            recordIP: true,
+            requiredFields: ['nick','mail']
+        })
