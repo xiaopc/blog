@@ -8,6 +8,9 @@ permalink: links/
 
 {% raw %}
 <div class="link-list">
+    <a href="https://www.vultr.com/?ref=8597020-6G" target="_blank" rel="noopener">
+        Vultr<br><span>注册送 $100 体验金</span>
+    </a>
     <a href="http://www.dynadot.com/?s9T6ugy6e6C647c" target="_blank" rel="noopener">
         DynaDot<br><span>域名注册满 $9.99 送 $5</span>
     </a>
