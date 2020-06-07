@@ -41,6 +41,10 @@ categories:
 因为用户名 `username.github.io` 的 Github Pages 仓库只能部署 master 分支，而 Actions 的配置文件需要放在 master 分支（仅为个人猜测，因为放在其他分支出现了问题）。
 所以需要再开一个仓库，放本地的源代码以及配置 Actions。
 
+> 2020-06-06  update:
+若不使用 `username.github.io` 这个仓库，而是在其他名字的仓库使用 Pages 的话，是可以放在同一个仓库的不同分支上的。
+Actions 配置文件仅在当前分支上会被触发（[source](https://help.github.com/en/actions/reference/events-that-trigger-workflows#about-workflow-events)），因此开一个分支 `source` 里面放源码和 Actions 配置文件是可以的 。详见[英文版 Blog](https://github.com/xiaopc/blog-en) 的操作。
+
 新建一个仓库，先不需要初始化。在本地生成一个 key：
 
 ```bash
@@ -56,6 +60,9 @@ ssh-keygen -t rsa -b 4096 -C "xiaopc@users.noreply.github.com" -f ~/.ssh/github-
 > 2020-02-19 update:
 如果 Github 账号有添加过 SSH key 是可以直接用的（那个 key 有所有仓库的权限），只需要添加 `ACTION_DEPLOY_KEY` 即可，不需要添加公钥。
 但是为了安全起见呢，最好还是新建一个吧 (o=^•ェ•)o
+
+> 2020-06-06 update:
+同一个 Github 账号下不能添加两个相同的 SSH key，也就是说按照上面的方法添加的 key 无法再被添加到另外一个仓库，或是设为账号全局 key。
 
 ## 4. 给源码仓库添加 Actions 配置
 
