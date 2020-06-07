@@ -134,7 +134,7 @@ jobs:
 
 3. `uses` 是使用打包好的 action，可以通过 `with` 传参数。官方提供了一些 Git 基本操作和环境安装的包，也可以使用 Docker。
 
-4. `env` 可以设置这一步的环境变量，这一步设置的变量不会继承到下一步。刚才设置的私钥可以通过 `${{ secrets.key名 }}` 获取到，具体见[文档](https://help.github.com/en/articles/virtual-environments-for-github-actions)。另外直接将密钥 echo 出来会被打码 :)
+4. `env` 可以设置这一步的环境变量，这一步设置的变量不会继承到下一步。刚才设置的私钥可以通过 ` secrets` 模板变量获取到，具体见[文档](https://help.github.com/en/articles/virtual-environments-for-github-actions)。另外直接将密钥 echo 出来会被打码 :)
 
 5. 在网页上保存私钥很可能会把 key 存成 CR-LF 换行模式的，而私钥文件要求 LF 模式，要用 `tr -d '\r'` 去掉回车符。（在这卡了几个小时(ノへ￣、)）[3]
 
