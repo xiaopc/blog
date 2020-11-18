@@ -53,7 +53,7 @@ $ ibmcloud login
 
 需要额外设置「组织」和「空间名」两个设置，在网页版右上角「管理-账户-Cloud Foundry 组织」可以找到组织名，点进去有空间名。
 
-前面提到的坑在于，在 Cloud Functions 里建立的命名空间不是基于 Cloud Foundary 的，无法用 CLI 来进行操作（aka 只能用网页操作）。免费 tier 只提供了 `us-south`，所以东京等等节点基本上没法用...
+前面提到的坑在于，在 Cloud Functions 里建立的命名空间不是基于 Cloud Foundary 的，无法用 CLI 来进行操作（aka 只能用网页操作）。而 Cloud Foundary 在免费 tier 只提供了 `us-south`，所以东京等等节点基本上没法用...
 
 ```bash
 $ ibmcloud target -o *组织名，一般是账号* -s *空间名，一般是 dev*
@@ -79,7 +79,7 @@ Space:             dev
 然后安装 Functions 插件：
 
 ```bash
-ibmcloud plugin install cloud-functions
+$ ibmcloud plugin install cloud-functions
 ```
 
 这样 CLI 就配置好了。
@@ -140,6 +140,8 @@ def main(args):
 
     return { 'code': '200' }
 ```
+
+代码里不设置 token，在部署的时候会作为参数传入。
 
 这就完成了一个无情的复读机 (o=^•ェ•)o　┏━┓
 
