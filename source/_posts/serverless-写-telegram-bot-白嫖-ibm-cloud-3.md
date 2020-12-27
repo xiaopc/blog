@@ -12,7 +12,7 @@ categories:
 
 ## 9. 使用 Cloud Function 可能会遇到的问题
 
-1. 如果依赖的 packages 里有需要编译二进制 `.so` 的话，务必在与 Cloud Function 容器相同的环境下安装到 virtualenv。
+1. 如果依赖里有需要编译二进制 `.so` 的 packages，务必在与 Cloud Function 容器相同的环境下安装到 virtualenv。
   （否则会遇到诸如 `ModuleNotFoundError` 这种问题[1]）
 
 ```python
@@ -23,11 +23,16 @@ sys.version == "3.7.9 (default, Sep 10 2020, 17:09:36) \n[GCC 8.3.0]"
 ```
 
 > 针对 Python 版本问题，一个解决方法是：
-> - 安装 [pyenv](https://github.com/pyenv/pyenv);
-> - 安装编译 Python 所需依赖[2];
-> - 安装对应版本的 Python（从 python.org 下载安装包太慢的话，自行下载放至 pyenv 的 `cache` 目录下即可）;
-> - 安装 virtualenv（`pyenv-virtualenv` 插件生成的 virtualenv 没有 `bin/active_this.py`）;
-> - 按照之前的步骤创建 virtualenv.
+> 
+> a. 安装 [pyenv](https://github.com/pyenv/pyenv);
+> 
+> b. 安装编译 Python 所需依赖[2];
+> 
+> c. 安装对应版本的 Python（从 python.org 下载安装包太慢的话，自行下载放至 pyenv 的 `cache` 目录下即可）;
+> 
+> d. 安装 virtualenv（`pyenv-virtualenv` 插件生成的 virtualenv 没有 `bin/active_this.py`）;
+> 
+> e. 按照之前的步骤创建 virtualenv.
 > 
 > 或者用 [Docker 的解决方法](https://github.com/apache/openwhisk/blob/master/docs/actions-python.md#packaging-python-actions-with-a-virtual-environment-in-zip-files)，这里还有写默认环境有哪些 packages。
 
