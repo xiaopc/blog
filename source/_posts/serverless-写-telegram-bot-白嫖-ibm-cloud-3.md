@@ -58,7 +58,7 @@ sys.version == "3.7.9 (default, Sep 10 2020, 17:09:36) \n[GCC 8.3.0]"
 
 ## 11. 调用其他 Function，再嫖个 NoSQL
 
-调用其他 Function其实也是用 HTTP API，一个示例：
+调用其他 Function 其实也是用 HTTP API，一个示例：
 
 ```python
 APIHOST  = os.environ.get('__OW_API_HOST')

@@ -53,7 +53,9 @@ $ ibmcloud login
 
 需要额外设置「组织」和「空间名」两个设置，在网页版右上角「管理-账户-Cloud Foundry 组织」可以找到组织名，点进去有空间名。
 
-前面提到的坑在于，在 Cloud Functions 里建立的命名空间不是基于 Cloud Foundary 的，无法用 CLI 来进行操作（aka 只能用网页操作）。而 Cloud Foundary 在免费 tier 只提供了 `us-south`，所以东京等等节点基本上没法用...
+~~前面提到的坑在于，在 Cloud Functions 里建立的命名空间不是基于 Cloud Foundary 的，无法用 CLI 来进行操作（aka 只能用网页操作）。而 Cloud Foundary 在免费 tier 只提供了 `us-south`，所以东京等等节点基本上没法用...~~
+
+> 2021.1.25 update <br> (基于 IAM 而不是 Cloud Foundary 的命名空间) 其实可以用 CLI，区域选新命名空间所在的区域，然后用 `ibmcloud fn property set --namespace '命名空间'` 为 Function 单独指定即可，不需要设置 Cloud Foundary 相关参数.
 
 ```bash
 $ ibmcloud target -o *组织名，一般是账号* -s *空间名，一般是 dev*
