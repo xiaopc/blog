@@ -20,7 +20,10 @@ valineKey: bD3bvilfMLj1PdQxeG1klTm0
 
 # Analytics
 # google-analytics:
-ga: UA-23646862-3
+ga:
+
+# google-tag-manager
+gtm: GTM-TZJ35RJ
 
 # Adsense
 adsense:
