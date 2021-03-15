@@ -4,7 +4,6 @@ id: 20
 categories:
   - 后端
 date: 2016-07-20 16:04:37
-permalink: '也说-httpoxy'
 ---
 
 1.  从环境变量取 HTTP_PROXY 的服务可能受影响（wget/curl 之类没事）。

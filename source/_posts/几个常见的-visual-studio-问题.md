@@ -4,7 +4,6 @@ id: 90
 categories:
   - c-cpp
 date: 2016-09-24 12:25:30
-permalink: '几个常见的-visual-studio-问题'
 ---
 
 课业繁重，没太多时间水 Blog 哈...... 记录下几个常见的问题，以供参考。

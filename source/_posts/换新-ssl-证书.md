@@ -4,7 +4,6 @@ id: 84
 categories:
   - 其他
 date: 2016-09-11 16:48:45
-permalink: '换新-ssl-证书'
 ---
 
 ## 为什么不再使用 StartSSL 的证书

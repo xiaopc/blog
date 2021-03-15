@@ -4,7 +4,6 @@ id: 13
 categories:
   - 后端
 date: 2016-07-18 09:32:22
-permalink: 'nginx-反代-google-analytics-和-recaptcha-实践'
 ---
 
 > 2018/3/11 update

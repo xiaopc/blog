@@ -56,6 +56,10 @@
         font-size: 18px;
     }
     
+    p {
+        line-break: anywhere;
+    }
+    
     hr {
         border: 0;
         border-top: 5pt dotted #42b983;
@@ -79,6 +83,10 @@
         display: block;
         max-width: 100%;
         margin: 1em auto;
+    }
+    figcaption {
+        text-align: center;
+        color: #999;
     }
     & > table,
     & > figure.highlight {

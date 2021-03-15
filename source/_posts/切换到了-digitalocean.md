@@ -4,7 +4,6 @@ id: 96
 categories:
   - 其他
 date: 2016-10-08 21:25:59
-permalink: '切换到了-digitalocean'
 ---
 
 因为 Github Student Pack 送的 credit （还因为 Vultr 送的花光了TwT），所以除了反代以外所有的 VPS 都切换到了 DigitalOcean。

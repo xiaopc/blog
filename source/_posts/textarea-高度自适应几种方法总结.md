@@ -4,7 +4,6 @@ id: 36
 categories:
   - 前端
 date: 2016-08-04 10:06:50
-permalink: '高度自适应几种方法总结'
 ---
 
 ## 法一：使用 contenteditable &lt;div&gt; 代替 &lt;textarea&gt;

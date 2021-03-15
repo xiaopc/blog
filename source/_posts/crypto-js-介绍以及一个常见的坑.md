@@ -4,7 +4,6 @@ id: 33
 categories:
   - 前端
 date: 2016-07-26 09:07:36
-permalink: 'crypto-js-介绍以及一个常见的坑'
 ---
 
 ## 概述
