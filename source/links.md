@@ -52,8 +52,8 @@ permalink: links/
     <a href="http://les1ie.com/" target="_blank" rel="noopener">
         冰神<br><span>les1ie.com</span>
     </a>
-    <a href="http://webdoger.club/" target="_blank" rel="noopener">
-        孔壕<br><span>webdoger.club</span>
+    <a href="http://webdoger.me/" target="_blank" rel="noopener">
+        孔壕<br><span>webdoger.me</span>
     </a>
     <a href="https://wangyang-wy.github.io/" target="_blank" rel="noopener">
         阳神<br><span>wangyang-wy.github.io</span>
