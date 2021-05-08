@@ -5,7 +5,7 @@ categories:
   - devops
 ---
 
-在[用 Google Analytics 4 和 Google Tag Manager 能玩出什么花样](/2021/03/14/用-google-analytics-4-和-google-tag-manager-能玩出什么花样/)一文种谈到，GA4 的分析功能目前还不够强大，那么就直接把「原始数据」倒出来分析吧。
+在[用 Google Analytics 4 和 Google Tag Manager 能玩出什么花样](/2021/03/14/用-google-analytics-4-和-google-tag-manager-能玩出什么花样/)一文中谈到，GA4 的分析功能目前还不够强大，那么就直接把「原始数据」倒出来分析吧。
 
 <!--more-->
 
