@@ -11,7 +11,7 @@ date: 2021-06-30 20:13:58
 
 ## 0. 优化 FP 的奇技淫巧
 
-「众所周知」First Paint (白屏时间) 是评估前端体验的重要指标，减少首次渲染之前的空白会给用户带来更好的体验.
+「众所周知」First Paint (白屏时间) 是评估前端体验的重要指标，减少首次渲染之前的空白时间能减少用户的焦虑感.
 
 那么可能不「众所周知」的是，外部 (`<link href>`) CSS 默认是以最高优先级加载的，在其加载完成前会阻塞渲染.
 
@@ -27,7 +27,7 @@ date: 2021-06-30 20:13:58
 
 `media="print"` 的优先级会被调成 Low，且不再阻塞加载. 在其加载完成后，用 `onload` 事件把 `media` 改回来以免影响样式.
 
-这带来了新的问题，如果外部 CSS 多的话免不了要用 LoadCSS 这个 JS 库，这又引入了新的加载延迟；而如果外部 CSS 少的话，`onload` 事件在禁用 JS 的浏览器上无法触发，样式无法应用.
+这带来了新的问题，如果外部 CSS 多的话免不了要用 LoadCSS 这个 JS 库，这又引入了新的加载延迟；此外，`onload` 事件在禁用 JS 的浏览器上无法触发，样式无法应用.
 
 解决禁用 JS 的问题，就是 Sukka 的版本[2]了：
 
@@ -74,7 +74,7 @@ class LinkMediaHTMLWebpackPlugin {
 module.exports = LinkMediaHTMLWebpackPlugin;
 ```
 
-来快速查一下 [4]，再捋一捋逻辑：Webpack 启动以后会有个唯一的 `compiler` 对象，然后对每个要编译的模块走一遍 `compilation`；每次启动先调用所有注册的 `plugin` 对象 `apply` 方法来初始化. 插件用 `tap` 来绑定同步钩子，`compiler` 的 `compilation` 钩子，`compilation` 的 `htmlWebpackPluginAlterAssetTags` 钩子.
+来快速查一下 [4]，再捋一捋逻辑：Webpack 启动以后会有个唯一的 `compiler` 对象，然后对每个要编译的模块走一遍 `compilation`；每次启动先调用所有注册的 `plugin` 对象 `apply` 方法来初始化. 插件用 `tap` 来绑定同步钩子，这里绑定了 `compiler` 的 `compilation` 钩子，`compilation` 的 `htmlWebpackPluginAlterAssetTags` 钩子.
 
 ## 3. 开始写
 

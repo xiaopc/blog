@@ -57,7 +57,10 @@
     }
     
     p {
-        line-break: anywhere;
+        line-break: strict;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        hyphens: auto;
     }
     
     hr {
