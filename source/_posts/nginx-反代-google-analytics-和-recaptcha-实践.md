@@ -6,6 +6,9 @@ categories:
 date: 2016-07-18 09:32:22
 ---
 
+> 2022/4/4 update:
+> 更新版请见 [Cloudflare Workers 反代 Google Analytics](https://xiaopc.org/2022/04/04/%E6%97%A7%E6%96%87%E6%9B%B4%E6%96%B0-cloudflare-workers-%E5%8F%8D%E4%BB%A3-google-analytics/)
+
 > 2018/3/11 update
 > 
 > 这个方法现在有许多问题（无法获得真实IP等），鉴于现在 Google Analytics 服务可用性在好转，不再建议使用这种方式。如果追求可靠性的话，建议使用国内的服务或者自建统计服务。

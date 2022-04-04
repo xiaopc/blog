@@ -40,7 +40,9 @@ Cloudflare 基础使用就不赘述了，在 Dashboard 里找到 Workers 开通�
 
 相比仅代理上报接口（Measurement Protocol），代理 `gtag.js` 的好处是不用自己维护这个文件的更新，且不用修改其他的代码（如使用 Google Analytics 做了自定义事件上报等等），甚至（或许可以，但未测试）支持 Tag Manager，功能更丰富. 当然缺点也显而易见，`gtag.js` 也会消耗一次请求，访问量较大时免费的请求数可能会吃紧.
 
-最后回答为什么要反代 Google Analytics 这个问题，一方面是境内确实会有部分网络无法访问 `google-analytics.com`，个人经验而言，同时使用 GA 和其他国内统计工具，GA 的数值会低 10% 左右. 另一方面，支持 BigQuery 的 GA4 对会 SQL 的使用者而言无疑非常强大，这是其他统计工具仍无可望其项背的.  
+最后回答为什么要反代 Google Analytics 这个问题，一方面是境内确实会有部分网络无法访问 `google-analytics.com`，个人经验而言，同时使用 GA 和其他国内统计工具，GA 的数值会低 10% 左右. 另一方面，支持 BigQuery 的 GA4 对会 SQL 的使用者而言无疑非常强大，这是其他统计工具仍无可望其项背的. 
+
+最后强调一下，反代 Google Analytics 目前（唯一？）的问题是，Measurement Protocol 现在不能手动设置来源 IP，这意味着**无法获取访客地理位置、运营商**等信息. 不过如果在 Workers 使用如 `lib-qqwry` 去查询 IP 库后修改上报内容，或许不失为一种权宜之策.
 
 * * *
 
