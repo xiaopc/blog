@@ -4,25 +4,6 @@ date: 2017-12-26 20:52:56
 permalink: links/
 ---
 
-## 推广
-
-{% raw %}
-<div class="link-list">
-    <a href="https://www.vultr.com/?ref=8597020-6G" target="_blank" rel="noopener">
-        Vultr<br><span>注册送 $100 体验金</span>
-    </a>
-    <a href="http://www.dynadot.com/?s9T6ugy6e6C647c" target="_blank" rel="noopener">
-        DynaDot<br><span>域名注册满 $9.99 送 $5</span>
-    </a>
-    <a href="https://www.aliyun.com/minisite/goods?userCode=hl1uilbl" target="_blank" rel="noopener">
-        阿里云优惠券<br><span>新老用户都有</span>
-    </a>
-    <a href="https://cloud.tencent.com/act/cps/redirect?redirect=1054&cps_key=da2e67a4ea07864f3ac54599a94cd8c7&from=console" target="_blank" rel="noopener">
-        腾讯云秒杀<br><span>1C2G 首年 &yen;99</span>
-    </a>
-</div>
-{% endraw %}
-
 ## 其他写字的地方
 
 {% raw %}
