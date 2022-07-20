@@ -14,8 +14,8 @@ likeqr: /wechat_like.png
 # e.g disqus: seansun
 disqus:
 duoshuo:
-valineId: QWPJDsaiA2w1pYVMtdUaupan-MdYXbMMI
-valineKey: bD3bvilfMLj1PdQxeG1klTm0
+# valineId: QWPJDsaiA2w1pYVMtdUaupan-MdYXbMMI
+# valineKey: bD3bvilfMLj1PdQxeG1klTm0
 
 
 # Analytics
