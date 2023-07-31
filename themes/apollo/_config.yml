@@ -30,6 +30,3 @@ adsense:
 
 # Copyright Infomation
 startyear: 2008
-
-node_sass:
-  outputStyle: compressed

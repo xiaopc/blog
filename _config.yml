@@ -113,6 +113,6 @@ archive_generator:
 
 node_sass:
   debug: false
-  outputStyle: nested
+  outputStyle: compressed
   precision: 5
   sourceComments: false

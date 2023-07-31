@@ -11,17 +11,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Cache node modules
-        uses: actions/cache@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          path: node_modules
-          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+          node-version: 16
 
-      - uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          node-version: "14"
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Setup Hexo env
         env:
@@ -36,8 +51,8 @@ jobs:
           git config --global user.name 'xiaopc'
           git config --global user.email 'xiaopc@users.noreply.github.com'
           # install dependencies
-          npm i -g hexo-cli
-          npm i
+          pnpm add -g hexo-cli
+          pnpm i
           # install pandoc
           curl -s -L https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz | tar xvzf - -C $RUNNER_TOOL_CACHE/
 
