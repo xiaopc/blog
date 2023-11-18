@@ -5,6 +5,8 @@ categories:
   - devops
 ---
 
+> 2023-11-18 update: 三年后 IBM Cloud 砍了云函数业务，本文可以不用看了
+
 最后来一些[豆知识](https://zh.wikipedia.org/wiki/%E5%86%B7%E7%9F%A5%E8%AD%98)收尾。
 
 <!--more-->

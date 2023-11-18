@@ -5,6 +5,8 @@ categories:
   - devops
 ---
 
+> 2023-11-18 update: 三年后 IBM Cloud 砍了云函数业务，本文可以不用看了
+
 网上的教程都是教白嫖 Cloud Foundary 建站~~开梯子~~的，弄得 IBM 都开始封 IP 了，哼。 (* ￣︿￣)
 
 来玩点正经的吧！今天用 Serverless 来做 Telegram Bot。
